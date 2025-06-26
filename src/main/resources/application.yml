@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Restraunt-Booking-Table
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tablebooking
+    username: root
+    password: vilora@2025!
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 3000
