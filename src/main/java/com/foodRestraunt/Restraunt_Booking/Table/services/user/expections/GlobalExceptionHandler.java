@@ -1,7 +1,6 @@
 package com.foodRestraunt.Restraunt_Booking.Table.services.user.expections;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,23 +13,15 @@ public class GlobalExceptionHandler{
 
 
     @ExceptionHandler(ResourceNotFoundException.class)
-
-    public ResponseEntity<ErrorDetails> handleResourcesNotFound(ResourceNotFoundException ex, WebRequest request){
+        public ResponseEntity<ErrorDetails> handleResourcesNotFound(ResourceNotFoundException ex, WebRequest request){
         ErrorDetails error = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<>(error,HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(Expection.class)
-
-    public ResponseEntity<ErrorDetails> handleGeneric(Expection ex, WebRequest request){
+    @ExceptionHandler(Exception.class)
+        public ResponseEntity<ErrorDetails> handleGeneric(Exception ex, WebRequest request) {
         ErrorDetails error = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
-
-
-
-        return new ResponseEntity<>(error,HttpStatus.INTERNAL_SERVER_ERROR);
-
-
-
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 
