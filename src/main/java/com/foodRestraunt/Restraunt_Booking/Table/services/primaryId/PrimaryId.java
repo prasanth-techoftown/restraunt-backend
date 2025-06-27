@@ -15,6 +15,7 @@ public abstract class PrimaryId implements Serializable {
     private Long id;
 
     public Long getId() {
+        
         return id;
     }
 

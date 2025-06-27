@@ -11,7 +11,7 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "user_registration")
-public class UserRegistration extends PrimaryId {
+public class UserRegistrationModel extends PrimaryId {
 
     @NotBlank(message = "Name is required")
     @Size(max = 100, message = "Name must not exceed 100 characters")

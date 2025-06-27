@@ -5,12 +5,21 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/tablebooking
     username: root
-    password: vilora@2025!
+    password: vilora
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
 
+devtools:
+  livereload:
+    enabled: true  
+
 server:
   port: 3000
+  
+
+logging:
+  level:
+    com.foodRestraunt.Restraunt_Booking.Table: INFO  
